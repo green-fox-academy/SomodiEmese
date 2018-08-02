@@ -1,0 +1,40 @@
+
+            body {
+                background-image: url(topography.png) ;
+                padding: 10% ;
+            }
+            h1 {
+                font-family: 'Roboto Slab', serif;
+                font-weight: bolder ;
+                color: #333333;
+                font-size: 45px;
+            }
+            h2 {
+                font-family: 'Roboto Slab', serif;
+                color: #ff0099;
+                font-weight: normal ;
+            }
+            h3{
+                font-family: consolas;
+                font-size: 30px;
+                text-align: center;
+             }
+             h4 {
+                font-family: 'Roboto Slab', serif;
+                font-weight: bolder ;
+                text-align: center;
+                font-size: 35px; 
+             }
+             h5{
+                font-family: 'Roboto Slab', serif ;
+                 font-size: 30px;
+                 margin-bottom: 0%;
+             }
+            p {
+                font-family: consolas;
+                font weight: bolder ;
+            }
+            .smaller {
+                font-size: 15px ;
+            }
+          
