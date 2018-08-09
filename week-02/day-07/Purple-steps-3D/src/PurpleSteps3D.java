@@ -4,13 +4,15 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class PurpleSteps3D  {
     public static void mainDraw(Graphics graphics) {
+        int distance = 0;
+        drawPurpleSquares(graphics, 10, 10 , 20);
+        drawPurpleSquares(graphics, 30, 30 , 30);
 
-        int x = 10;
-        int y = 10;
-        int a = 10;
-        for ( int i =0; i < 5; i++ ) {
-                drawPurpleSquares(graphics, x*i + 2* 10 * i, y* i + 2* 10 * i  , a * i);
-            }
+        for (int i = 1; i <= 6; i++){
+            int size = 10 * i;
+            drawPurpleSquares(graphics, distance, distance , size);
+            distance += size;
+        }
     }
 
     private static void drawPurpleSquares(Graphics graphics, int x, int y, int a ) {
