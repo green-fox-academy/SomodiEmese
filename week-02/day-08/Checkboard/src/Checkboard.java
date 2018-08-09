@@ -1,25 +1,24 @@
 import javax.swing.*;
-
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class ColoredBox {
+public class Checkboard  {
     public static void mainDraw(Graphics graphics) {
 
-        graphics.setColor(Color.blue);
-        graphics.drawRect( 0, 0,60,40 );
-
-        graphics.setColor(Color.red);
-        graphics.drawRect(320, 0, 60, 40);
-
-        graphics.setColor(Color.yellow);
-        graphics.drawRect(0, 343, 60,40);
-
-        graphics.setColor(Color.green);
-        graphics.drawRect(320, 343, 60, 40);
-
-    }
+            int x = 0;
+            int y = 0;
+            for ( int i = 0;  i < 9;  i++ ){
+                for ( int j = 0;  j < 8;  j++) {
+                    x = j * 22;
+                    y = i * 22;
+                    if ( (i % 2) == (j % 2) )
+                        graphics.setColor(Color.WHITE);
+                    else
+                        graphics.setColor(Color.BLACK);
+                        graphics.fillRect(x, y, 22, 22);
+                }
+            }
+        }
 
     static int WIDTH = 320;
     static int HEIGHT = 343;

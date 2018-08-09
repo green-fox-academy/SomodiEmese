@@ -4,7 +4,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class LineInTheMiddle {
     public static void mainDraw(Graphics graphics){
-        
+
         graphics.setColor(Color.red);
         graphics.drawLine(160, 120, 160,173   );
         graphics.setColor(Color.green);
