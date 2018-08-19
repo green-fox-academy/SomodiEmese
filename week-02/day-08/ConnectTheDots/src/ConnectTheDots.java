@@ -4,8 +4,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class ConnectTheDots  {
     public static void mainDraw(Graphics graphics) {
-        // Connect these:  {50, 100}, {70, 70}, {80, 90}, {90, 90}, {100, 70},
-        // {120, 100}, {85, 130}, {50, 100}}
+
         int[]  box = new int[]{10, 10, 290,  10, 290, 290, 10, 290, 10, 10};
         drawBox(graphics, box );
 
