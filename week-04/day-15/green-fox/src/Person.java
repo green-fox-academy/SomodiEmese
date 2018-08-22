@@ -14,7 +14,7 @@ public class Person {
         this.age = age;
         this.gender = gender;
     }
-    
+
         public void introduce(){
         System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender );
     }
