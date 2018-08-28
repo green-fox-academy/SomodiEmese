@@ -15,7 +15,8 @@ public class AnagramTest {
     public void isAnagram() {
        String a = new String("tacocat");
        String b = new String ("cattaco");
-       assertEquals(true, anagram.isAnagram(a,  b));
+       boolean answer =  anagram.isAnagram(a,  b);
+       assertEquals(true, answer);
 
     }
 }
