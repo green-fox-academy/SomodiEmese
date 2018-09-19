@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1 class="styleh1">Bank of Simba </h1>
+    <table class = "styletable">
+        <tr class=" stylehead">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Type</th>
+            <th>Currency</th>
+            <th>Good or Bad</th>
+        </tr>
+
+
+        <th:block  th:each = "account : ${accounts}" >
+            <tr th:classappend= "${account.isKing() == true} ?  king" >
+                <td class="styletd"><span th:text="${'id ' + (accountStat.index + 1)}" /></td>
+                <td class="styletd"><span th:text = "${account.name}" /></td>
+                <td class="styletd"><span th:text = "${account.balance}" /></td>
+                <td class="styletd"><span th:text = "${account.animalType}" /></td>
+                <td class="styletd"><span th:text = "${account.currency}" /></td>
+                <td class="styletd">
+                    <div th:switch="${account.isGoodOrBad()}">
+                        <p th:case= "true"> Good guy</p>
+                        <p th:case= "false"> Bad Guy</p>
+                    </div>
+                </td></br>
+            </tr>
+
+        </th:block>
+
+    </table>
+</body>
+</html>

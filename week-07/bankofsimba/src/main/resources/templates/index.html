@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+    <ul>
+        <li th:text = "|${simba.name} ${simba.balance} ${simba.animalType}|"></li>
+        <li th:text = "| ${#numbers.formatDecimal(zebra.balance, 0, 'COMMA', 2, 'POINT')} ${zebra.animalType}|"></li>
+    </ul>
+
+    <p>
+        This is an <span th:utext="${element}"/> text. <span th:utext= "${element1}"/>
+        This is an <span th:text="${element}"/> text. <span th:text= "${element1}"/>
+    </p>
+</body>
+</html>
