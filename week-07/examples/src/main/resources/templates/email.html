@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style1.css}" />
+    <meta charset="utf-8" />
 </head>
+
 <body>
-$END$
+    <div th:switch="${email}">
+        <p th:case ="true" class="green"  th:text="${text} + ' is a valid email address'"> </p>
+        <p th:case ="false" class="red"  th:text="${text} +' is not a valid email address'">  </p>
+    </div>
 </body>
 </html>

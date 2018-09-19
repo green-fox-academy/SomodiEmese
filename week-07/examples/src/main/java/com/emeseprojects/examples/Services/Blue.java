@@ -1,4 +1,11 @@
 package com.emeseprojects.examples.Services;
 
-public class Blue {
+import org.springframework.stereotype.Service;
+
+
+public class Blue implements MyColor {
+
+    public void printColor(){
+        System.out.println("It is blue in color...");
+    }
 }

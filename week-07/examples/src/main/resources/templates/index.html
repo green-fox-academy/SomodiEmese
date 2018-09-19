@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
 </head>
 <body>
+    <div>
+        <p>
+            Color
+        </p>
+    </div>
 
+    <div>
+        <a href="/useful/colored" >Color</a>
+    </div>
+    <div>
+        <p>
+            Email
+        </p>
+    </div>
+
+    <div>
+        <a href="/useful/email">Email</a>
+    </div>
+
+    <div>
+        <p>
+            Caesar encoder/decoder
+        </p>
+    </div>
+    <div>
+        <a href="/useful/encoder">Encoder</a>
+        <a href="/useful/decoder">Decoder</a>
+    </div>
 </body>
 </html>
