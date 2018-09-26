@@ -29,12 +29,23 @@ public class TodoApplication implements CommandLineRunner {
        todo3.setTitle("Netflix and chill");
        Todo todo4 = new Todo();
        todo4.setTitle("Buy Unicorn");
+       Todo todo5 = new Todo();
+       todo5.setTitle("2+2 is 4");
+       Todo todo6 = new Todo();
+       todo6.setTitle("-1 that's 3");
+       Todo todo7 = new Todo();
+       todo7.setDone(true);
+       todo7.setTitle("Quick Maffs!!!");
 
 
        todoRepository.save(todo);
        todoRepository.save(todo2);
        todoRepository.save(todo3);
        todoRepository.save(todo4);
+       todoRepository.save(todo5);
+       todoRepository.save(todo6);
+       todoRepository.save(todo7);
+
        System.out.println(todoRepository.findAll());
 
     }
