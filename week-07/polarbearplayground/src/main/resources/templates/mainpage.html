@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Polar Bear Playground #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" >
+</head>
+<body>
+<div class="materialContainer">
+    <div class="box">
+        <form action="/main" method="post">
+        <div>
+            <h1 class="h1"> Welcome To Programmer Bear Club</h1>
+        </div>
+
+        <div style="float:left;">
+            <img src="polar.png" alt="Polar Bear" >
+        </div>
+
+        <div style="float:right;" class="links">
+            <ul >
+                <li class="li"><a href="/login">Information</a></li>
+                <li class="li"><a th:href="@{'/store?name=' + ${name}}">Nutrition Store</a></li>
+                <li class="li"><a th:href="@{'/trickcenter?name=' + ${name}}">Trick Center</a></li>
+                <li class="li"><a href="">Action History</a></li>
+            </ul>
+        </div>
+
+        <div style="clear:both;"></div>
+
+        <div>
+            <p th:utext ="'This is ' + ${name} + '. Currently lives on ' + ${food} + ' and ' + ${drink} + '. He/she knows <b>' + ${tricksCount} + '</b> tricks.'"> </p>
+        </div>
+
+        <div class="red">
+            <h2 >Known Tricks</h2>
+        </div>
+
+        <div>
+        <ul>
+            <li th:each="trick : ${tricks}">
+                <span th:text="${trick.value()}"></span>
+            </li>
+        </ul>
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

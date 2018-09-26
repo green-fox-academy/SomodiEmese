@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Trick Center #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" >
+</head>
+<body>
+    <div class="materialContainer">
+        <div class="box">
+            <form th:action="@{'/trickcenter/?name=' + ${bear.name}}" method="post" th:object="${bear}">
+                <div>
+                    <h1 class="h1">Trick Center</h1>
+                </div>
+                <div style="float: left;">
+                    <ul >
+                        <li class="li"><a th:href="@{'/main?name=' + ${name}}">Information</a></li>
+                        <li class="li"><a th:href="@{'/store?name=' + ${name}}">Nutrition Store</a></li>
+                        <li class="li"><a th:href="@{'/trickcenter?name=' + ${name}}">Trick Center</a></li>
+                        <li class="li"><a href="">Action History</a></li>
+                    </ul>
+                </div>
+
+                <div style="float: right;">
+                    <img src="love1.png" alt="trick">
+                </div>
+
+                <div style="clear:both;"></div>
+                <div>
+                    <label for="trick">Tricks:  </label>
+                    <select class = "styled-select" id="trick" th:field="*{trick}">
+                        <option th:each="trick : ${tricks}" th:value="${trick}">
+                            <span th:text="${trick.value()}"></span>
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+                <div>
+                    <input type="submit" value="Learn" class = button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
