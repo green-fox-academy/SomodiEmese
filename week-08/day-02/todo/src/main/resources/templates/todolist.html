@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ToDoList</title>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+</head>
+<body>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1 style="text-align: center">
+                Todos for today:
+            </h1>
+        </div>
+        <div style="text-align: center;" >
+            <a  class="btn btn-primary btn-lg active" href="/todo/add">+ add new todo</a>
+        </div>
+        </br>
+        <table class="table table-striped">
+        <div>
+            <thead >
+                <tr class="info" >
+                    <th>Id</th>
+                    <th>Action</th>
+                    <th>Done</th>
+                    <th>Urgent</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+        </div>
+
+            <tbody>
+            <th:bloc th:each="todo :${todos}">
+                <tr>
+                    <th scope="row">
+                        <span th:text="${todo.id}"></span>
+                    </th>
+                    <td  >
+                        <span th:text="${todo.title}"></span>
+                    </td>
+                    <td >
+                        <span th:classappend="${todo.done == false} ? 'glyphicon glyphicon-remove' : 'glyphicon glyphicon-ok' "></span>
+                    </td>
+                    <td >
+                        <span th:classappend="${todo.urgent == false} ? 'glyphicon glyphicon-remove' : 'glyphicon glyphicon-ok' "></span>
+                    </td>
+                    <td >
+                        <a  class="btn btn-danger" th:href="@{|/delete/${todo.id}|}">Delete</a>
+                    </td>
+                    <td >
+                        <a  class="btn btn-info" th:href="@{|/todo/${todo.id}/edit|}">Update</a>
+                    </td>
+                </tr>
+            </th:bloc>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

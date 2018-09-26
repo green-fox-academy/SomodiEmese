@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList</title>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<div class="materialContainer">
+    <div class="box">
+        <div>
+            <h1>
+                Todos for today:
+            </h1>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Action</th>
+                    <th>Done</th>
+                    <th>Urgent</th>
+                    <th>Delete</th>
+                </tr>
+                <th:bloc th:each="todo :${todos}" th:if= "${!done} == ${todo.done}">
+                    <tr>
+                        <td >
+                            <span th:text="${todo.id}"></span>
+                        </td>
+                        <td >
+                            <span th:text="${todo.title}"></span>
+                        </td>
+                        <td >
+                            <span th:text="${todo.done}"></span>
+                        </td>
+                        <td >
+                            <span th:text="${todo.urgent}"></span>
+                        </td>
+                        <td>
+                            <a th:href="@{|/delete/${todo.id}|}">Delete</a>
+                        </td>
+                    </tr>
+                </th:bloc>
+            </table>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
