@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <title>Reddit Like Page</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container content">
+        <div class="row">
+                <div class="page-header">
+                    <a class="btn btn-link" href="/submit">Back</a>
+                    <h1 style="text-align: center;" >Trending Posts</h1
+                </div>
+                <table class="table table-striped">
+                    <th:block th:each="post: ${posts}">
+                        <tr class="text-center">
+
+                            <form th:action="@{|/upvote/${post.id}|}" method="post">
+                                <td class="align-middle">
+                                    <button class="btn btn-info" type="submit" >+</button>
+                                </td>
+                            </form>
+                            <td class="align-middle">
+                                <span th:text="${post.vote}"></span>
+                            </td>
+                            <form th:action="@{|/downvote/${post.id}|}" method="post">
+                                <td class="align-middle">
+                                    <button class="btn btn-danger" type="submit">-</button>
+                                </td>
+                            </form>
+                            <td class="align-middle">
+                                <a th:href="${post.url}">
+                                    <span th:text="${post.title}"></span>
+                                </a>
+                            </td>
+                            <td class="align-middle">
+                                <span th:text="${post.createdAt}"></span>
+                            </td>
+                        </tr>
+                    </th:block>
+                </table>
+        </div>
+    </div>
+    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>
